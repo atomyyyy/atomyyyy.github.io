@@ -9,7 +9,7 @@ BEGIN:VEVENT
 UID:6Zrq6-nND14
 SUMMARY:[Koyori ch. 博衣こより - holoX -] 【 #ホロライブ甲子園 】こんこよ高校育成エピローグ！3年目秋から3年生卒業
 	まで！⚾ #8 【博衣こより/ホロライブ】
-DTSTAMP:20241120T072841Z
+DTSTAMP:20241120T080424Z
 DTSTART:20241120T100000Z
 DESCRIPTION:ホロライブ甲子園 大好評ありがとうございました！！！3年生の進路はどうなるのか、世界大会は？１、２年生での秋は？
 URL:https://www.youtube.com/watch?v=6Zrq6-nND14
@@ -19,7 +19,7 @@ BEGIN:VEVENT
 UID:uBipBKo6gdw
 SUMMARY:[hololive ホロライブ - VTuber Group] 【今夜決定！】ユーザー考案！ EXPO限定ドリンク！【#hololiv
 	efesEXPO25】
-DTSTAMP:20241120T072841Z
+DTSTAMP:20241120T080424Z
 DTSTART:20241120T110000Z
 DESCRIPTION:2025年3月8日～9日、「hololive SUPER EXPO 2025」の会場で販売される ユーザー考案ドリンクが今夜決
 	定します！あなたが ...
@@ -27,10 +27,21 @@ URL:https://www.youtube.com/watch?v=uBipBKo6gdw
 DURATION:PT2H
 END:VEVENT
 BEGIN:VEVENT
+UID:XcsyjOthdDM
+SUMMARY:[Koyori ch. 博衣こより - holoX -] 【HoloCure】3期生＆4期生追加なアプデがきちゃああああ！！！！！✨【
+	博衣こより/ホロライブ】
+DTSTAMP:20241120T080424Z
+DTSTART:20241121T100000Z
+DESCRIPTION:ひさびさのHoloCure～～～！！！！！！！✨めちゃ好きだからやるの楽しみにしてたん！！！   ASMR秋のおさんぽボイス発
+	売 ...
+URL:https://www.youtube.com/watch?v=XcsyjOthdDM
+DURATION:PT2H
+END:VEVENT
+BEGIN:VEVENT
 UID:DvNg5BT7WKM
 SUMMARY:[Koyori ch. 博衣こより - holoX -] 【 #博衣こより3周年記念ゴリラ 】超重大発表アリ‼自費3Dスタジオでゴリラ
 	人狼＆新曲お披露目ライブ＆ほぼ新衣装お披露目だよ～～～！🎉【博衣こより/ホロライブ】
-DTSTAMP:20241120T072841Z
+DTSTAMP:20241120T080424Z
 DTSTART:20241128T110000Z
 DESCRIPTION:博衣こより3周年記念ゴリラ でつぶやいてね！！    ✨ 2024年11月28日、3周年を迎えることを記念して・・・完全自腹で
 	3D ...
@@ -40,7 +51,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:iV2DbcuYI4Q
 SUMMARY:[フブキCh。白上フブキ] 👑白上フブキ1stソロライブ 【FBKINGDOM “ANTHEM”】待機国民席
-DTSTAMP:20241120T072841Z
+DTSTAMP:20241120T080424Z
 DTSTART:20250213T093000Z
 DESCRIPTION:"  白上フブキ1stソロライブ FBKINGDOM “ANTHEM”   2025年2月13日(木)にぴあアリーナMMにて開
 	催決定！
@@ -50,7 +61,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:w4dgql_5Rzk
 SUMMARY:[Miko Ch. さくらみこ] 🌸 Free Chat ＆ みこち最新情報まとめ🌸
-DTSTAMP:20241120T072841Z
+DTSTAMP:20241120T080424Z
 DTSTART:20250305T145500Z
 DESCRIPTION:Sakura Miko 1st Album 「flower rhapsody」   2024年9月25日 発売決定！ 本日21
 	時より、通常版・数量限定版どちらも予約受付 ...
@@ -61,7 +72,7 @@ BEGIN:VEVENT
 UID:A81NFOBNvuM
 SUMMARY:[Koyori ch. 博衣こより - holoX -] 🧪 Free Chat &amp\; Schedule💗 Koyori Ch
 	. 🧪
-DTSTAMP:20241120T072841Z
+DTSTAMP:20241120T080424Z
 DTSTART:20250314T150000Z
 DESCRIPTION:初オリジナル曲「WAO!!」各種音楽サービスでリリース中！▽ https://cover.lnk.to/WAO 会話OKのフリ
 	ーチャットです(ᐡ •͈ ·̫ •͈ ...
@@ -71,7 +82,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:rKMhl43RHo0
 SUMMARY:[フブキCh。白上フブキ] FREEEEEEEEEEEEEEEEEEEE　Talk『2022～』
-DTSTAMP:20241120T072841Z
+DTSTAMP:20241120T080424Z
 DTSTART:20251030T150000Z
 DESCRIPTION:新しく枠を立て直しました(^・ω・^§)ﾉ ━━━━━━━━━━━━━━━━━━━━━━━ みんな いつも ありがとう 大好き
 	です ...
@@ -81,7 +92,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:O9V_EFbgpKQ
 SUMMARY:[Suisei Channel] フリーチャットだよ！ ▼ free chat room
-DTSTAMP:20241120T072841Z
+DTSTAMP:20241120T080424Z
 DTSTART:20261030T150000Z
 DESCRIPTION:フリーチャット枠です！配信は永遠に始まりませんよ！ チャットして遊べ！！！！！！！！ たまに本人もチャットするわよ ...
 URL:https://www.youtube.com/watch?v=O9V_EFbgpKQ
