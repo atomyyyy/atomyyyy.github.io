@@ -1,23 +1,12 @@
-import { outputFile } from 'fs-extra';
-import * as ics from 'ics'
+import { YoutubeDataClient } from './YoutubeDataClient.js';
+import { EntriesMerger } from './EntriesMerger.js';
+import { IcsGenerator } from './IcsGenerator.js';
 
-const { error, value } = ics.createEvents([
-  {
-    title: 'Lunch',
-    start: [2018, 1, 15, 12, 15],
-    duration: { minutes: 45 }
-  },
-  {
-    title: 'Dinner',
-    start: [2018, 1, 15, 12, 15],
-    duration: { hours: 1, minutes: 30 }
-  }
-], {
-	productId: 'vtuber'
-})
+const client = new YoutubeDataClient();
+const result = await client.findAllUpcomingEvent();
 
-if (error) {
-  console.log(error);
-}
+const entriesMerger = new EntriesMerger();
+const schedule = entriesMerger.loadNewData(Object.fromEntries(result));
 
-outputFile('calendar/vtuber.ics', value);
+const icsGenerator = new IcsGenerator(schedule);
+icsGenerator.generate();
