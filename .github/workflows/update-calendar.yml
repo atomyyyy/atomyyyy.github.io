@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Preparation Branch
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
         with:
           ref: calendar-ics
       - name: Use Node.js
@@ -31,11 +31,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Default Branch
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
         with:
           ref: gh-pages
       - name: Clean Up Calendar Folder
-      - run: rm calendar/*
+        run: rm calendar/*
       - name: Download a single artifact
         uses: actions/download-artifact@v4
         with:
