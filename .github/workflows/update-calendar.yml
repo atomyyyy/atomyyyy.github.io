@@ -1,6 +1,8 @@
 name: update-calendar
 
 on:
+  schedule:
+    - cron: "0 */6 * * *"
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -12,6 +14,9 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: calendar-ics
+      - name: Set Current Date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d %H:%M:%S')"
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
@@ -20,12 +25,23 @@ jobs:
         run: npm install
       - name: Prepare Calendar
         run: npm run start
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
       - name: Archive Latest Calendar
         uses: actions/upload-artifact@v4
         with:
           name: vtuber-calendar
           path: |
             calendar
+      - name: Configure Git
+        run: |
+          git config --global user.email ${{ secrets.EMAIL }}
+          git config --global user.name ${{ secrets.USERNAME }}
+      - name: Push Backup File
+        run: |
+          git add data
+          git commit -m "chore: [${{ steps.date.outputs.date }}] backup historical schedule"
+          git push origin calendar-ics
   push:
     needs: prepare
     runs-on: ubuntu-latest
@@ -34,6 +50,9 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: gh-pages
+      - name: Set Current Date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d %H:%M:%S')"
       - name: Clean Up Calendar Folder
         run: rm calendar/*
       - name: Download a single artifact
@@ -48,5 +67,5 @@ jobs:
       - name: Push Change
         run: |
           git add calendar/vtuber.ics
-          git commit -m "chore: refresh calendar"
+          git commit -m "chore: [${{ steps.date.outputs.date }}] refresh calendar"
           git push origin gh-pages
