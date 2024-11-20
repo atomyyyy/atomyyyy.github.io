@@ -62,7 +62,6 @@ class YoutubeDataClient {
 
 	async getLiveDetail(videoIds) {
 		const result = await axios.get('https://www.googleapis.com/youtube/v3/videos', { params: { ...this.defaultDetailParams, id: videoIds } });
-		console.log(result.data);
 		if (!result.data) return;
 		result.data.items.forEach(item => {
 			this.liveStreamMap.set(
