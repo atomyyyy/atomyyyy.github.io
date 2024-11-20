@@ -26,7 +26,7 @@ jobs:
           name: vtuber-calendar
           path: |
             calendar
-  release:
+  push:
     needs: prepare
     runs-on: ubuntu-latest
     steps:
@@ -41,7 +41,11 @@ jobs:
         with:
           name: vtuber-calendar
           path: calendar
-      - name: Commit and push change
+      - name: Configure Git
+        run: |
+          git config --global user.email ${{ secrets.github_email }}
+          git config --global user.name ${{ secrets.github_username }}
+      - name: Push Change
         run: |
           git add calendar/vtuber.ics
           git commit -m "chore: refresh calendar"
