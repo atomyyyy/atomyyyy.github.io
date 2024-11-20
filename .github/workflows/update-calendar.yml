@@ -14,6 +14,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: calendar-ics
+      - name: Set Current Date
+        run: echo "CURRENT_DATETIME=$(date -u +'%Y%m%d-%H%m')" >> $GITHUB_ENV
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
@@ -34,6 +36,11 @@ jobs:
         run: |
           git config --global user.email ${{ secrets.EMAIL }}
           git config --global user.name ${{ secrets.USERNAME }}
+      - name: Push Change
+        run: |
+          git add data/calendar.json
+          git commit -m "chore: [$CURRENT_DATETIME] refresh calendar"
+          git push origin calendar-ics
   push:
     needs: prepare
     runs-on: ubuntu-latest
