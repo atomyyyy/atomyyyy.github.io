@@ -49,6 +49,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: gh-pages
+      - name: Set Current Date
+        run: echo "CURRENT_DATETIME=$(date -u +'%Y%m%d-%H%m')" >> $GITHUB_ENV
       - name: Clean Up Calendar Folder
         run: rm calendar/*
       - name: Download a single artifact
