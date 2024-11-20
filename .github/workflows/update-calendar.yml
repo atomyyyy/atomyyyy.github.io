@@ -15,8 +15,7 @@ jobs:
         with:
           ref: calendar-ics
       - name: Set Current Date
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d %H:%M:%S')"
+        run: echo "$CURRENT_DATETIME=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV"
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
@@ -40,7 +39,7 @@ jobs:
       - name: Push Backup File
         run: |
           git add data
-          git commit -m "chore: [${{ steps.date.outputs.date }}] backup historical schedule"
+          git commit -m "chore: [$CURRENT_DATETIME] backup historical schedule"
           git push origin calendar-ics
   push:
     needs: prepare
@@ -50,9 +49,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: gh-pages
-      - name: Set Current Date
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d %H:%M:%S')"
       - name: Clean Up Calendar Folder
         run: rm calendar/*
       - name: Download a single artifact
@@ -67,5 +63,5 @@ jobs:
       - name: Push Change
         run: |
           git add calendar/vtuber.ics
-          git commit -m "chore: [${{ steps.date.outputs.date }}] refresh calendar"
+          git commit -m "chore: [$CURRENT_DATETIME] refresh calendar"
           git push origin gh-pages
