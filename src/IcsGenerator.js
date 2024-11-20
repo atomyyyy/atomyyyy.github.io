@@ -9,8 +9,8 @@ class IcsGenerator {
 	generate() {
 		const { error, value } = ics.createEvents(
 			this.schedule.map(live => {
-				const scheduleStartTime = new Date(live.scheduledStartTime);
 				return {
+					uid: live.videoId,
 					start: [
 						parseInt(live.scheduledStartTime.slice(0,4)),
 						parseInt(live.scheduledStartTime.slice(5,7)),
