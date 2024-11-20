@@ -16,6 +16,7 @@ class EntriesMerger {
 		const newList = {};
 
 		for (const [key, value] of Object.entries(combinedData)) {
+			if (key === 'lastUpdatedTime') continue;
 			const liveStreamDate = new Date(value.scheduledStartTime);
 			if (this.currentDate - liveStreamDate > (1000 * 60 * 60 * 24 * this.retentionPeriod)) {
 				backupList[key] = value;
@@ -28,7 +29,7 @@ class EntriesMerger {
 			outputFile(`${this.root}/legacy/${this.currentDate.toISOString()}.json`, Buffer.from(JSON.stringify(backupList)));
 		}
 
-		outputFile(`${this.root}/calendar.json`, Buffer.from(JSON.stringify(newList)));
+		outputFile(`${this.root}/calendar.json`, Buffer.from(JSON.stringify({ ...newList, lastUpdatedTime: new Date() })));
 
 		return Object.entries(newList).map(
 			([key, value]) => ({ ...value, videoId: key})
