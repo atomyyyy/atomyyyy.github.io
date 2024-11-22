@@ -17,7 +17,7 @@ jobs:
         with:
           ref: calendar-ics
       - name: Set Current Date
-        run: echo "CURRENT_DATETIME=$(date -u +'%Y%m%d-%H%m')" >> $GITHUB_ENV
+        run: echo "CURRENT_DATETIME=$(date -u +'%Y%m%d-%H%M')" >> $GITHUB_ENV
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
@@ -52,7 +52,7 @@ jobs:
         with:
           ref: gh-pages
       - name: Set Current Date
-        run: echo "CURRENT_DATETIME=$(date -u +'%Y%m%d-%H%m')" >> $GITHUB_ENV
+        run: echo "CURRENT_DATETIME=$(date -u +'%Y%m%d-%H%M')" >> $GITHUB_ENV
       - name: Clean Up Calendar Folder
         run: rm calendar/*
       - name: Download a single artifact
