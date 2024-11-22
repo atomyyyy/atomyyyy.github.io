@@ -49,7 +49,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: personal-website-artifact
-          path: atomyyyy.github.io
       - name: Push Change
         run: |
           git add --all
