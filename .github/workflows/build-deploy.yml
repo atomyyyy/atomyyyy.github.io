@@ -26,6 +26,8 @@ jobs:
         run: yarn
       - name: Build
         run: yarn build
+        env:
+          PUBLIC_URL: ${{ secrets.WEBSITE_DOMAIN }}
       - name: Archive Latest Resume Website
         uses: actions/upload-artifact@v4
         with:
@@ -45,6 +47,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: gh-pages
+      - name: Build
+        run: rm -rf ./static
       - name: Download a single artifact
         uses: actions/download-artifact@v4
         with:
