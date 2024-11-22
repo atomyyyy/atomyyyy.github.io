@@ -70,7 +70,7 @@ const About = () => (
         <b>Language</b>: Cantonese, English (Fluent)
       </Grid>
       <Grid item xs={12}>
-        <b>Employment</b>: Accenture Technology
+        <b>Employment</b>: Amazon
       </Grid>
     </StyledGridContainer>
   </SectionWrapper>

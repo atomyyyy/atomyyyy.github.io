@@ -1,4 +1,4 @@
-name: Deploy Resume Main Page
+name: update-resume
 
 on:
   push:
