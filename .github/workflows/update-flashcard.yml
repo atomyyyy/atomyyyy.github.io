@@ -57,6 +57,5 @@ jobs:
       - name: Push Change
         run: |
           git add flashcard
-          git restore flashcard/lyrics.json
           git commit -m "chore: update flashcard page"
           git push origin gh-pages
