@@ -3,14 +3,14 @@ name: update-resume
 on:
   push:
     branches:
-      - resume
+      - flashcard
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Cache modules
         uses: actions/cache@v1
         id: yarn-cache
@@ -18,20 +18,20 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: ${{ runner.os }}-yarn-
-      - name: Use Node.js 19.x
+      - name: Use Node.js 18.x
         uses: actions/setup-node@v1
         with:
           node-version: 19.x
       - name: Install dependencies
         run: yarn
       - name: Build
-        run: yarn build
+        run: npm run build
         env:
-          PUBLIC_URL: ${{ secrets.WEBSITE_DOMAIN }}
+          PUBLIC_URL: ${{ secrets.WEBSITE_DOMAIN }}/flashcard
       - name: Archive Latest Resume Website
         uses: actions/upload-artifact@v4
         with:
-          name: personal-website-artifact
+          name: flashcard-website-artifact
           path: |
             build
 
@@ -52,9 +52,10 @@ jobs:
       - name: Download a single artifact
         uses: actions/download-artifact@v4
         with:
-          name: personal-website-artifact
+          name: flashcard-website-artifact
+          path: flashcard
       - name: Push Change
         run: |
-          git add --all
-          git commit -m "chore: update personal page"
+          git add flashcard
+          git commit -m "chore: update flashcard page"
           git push origin gh-pages
