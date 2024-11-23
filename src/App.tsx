@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     const prevCounter = localStorage.getItem('curItem');
     if (prevCounter) setCounter(parseInt(prevCounter));
-    fetch('/flashcard/lyrics.json').then(response => response.json()).then(data => { setData(data) });
+    fetch('https://atomyyyy.github.io/flashcard/lyrics.json').then(response => response.json()).then(data => { setData(data) });
   }, []);
   
   const prev = () => {
