@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "https://atomyyyy.github.io/flashcard/static/css/main.f855e6bc.css",
+    "main.js": "https://atomyyyy.github.io/flashcard/static/js/main.afd594cb.js",
+    "static/js/453.5ab3951c.chunk.js": "https://atomyyyy.github.io/flashcard/static/js/453.5ab3951c.chunk.js",
+    "index.html": "https://atomyyyy.github.io/flashcard/index.html",
+    "main.f855e6bc.css.map": "https://atomyyyy.github.io/flashcard/static/css/main.f855e6bc.css.map",
+    "main.afd594cb.js.map": "https://atomyyyy.github.io/flashcard/static/js/main.afd594cb.js.map",
+    "453.5ab3951c.chunk.js.map": "https://atomyyyy.github.io/flashcard/static/js/453.5ab3951c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.afd594cb.js"
+  ]
+}
