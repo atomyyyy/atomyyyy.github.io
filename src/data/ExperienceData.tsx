@@ -2,9 +2,18 @@ import type { ExperienceDataType } from '../types/ExperienceDataType';
 
 const ExperienceData: ExperienceDataType[] = [
   {
+    name: 'Amazon',
+    country: 'Vancouver',
+    startDate: new Date(2024,8),
+    description: [
+      'SDE II',
+    ]
+  },
+  {
     name: 'Accenture Technology',
     country: 'Hong Kong',
     startDate: new Date(2021,4),
+    endDate: new Date(2024,8),
     description: [
       'Data Engineering Specialist',
       'Implement analytic data platform',
