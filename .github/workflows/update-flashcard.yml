@@ -56,6 +56,6 @@ jobs:
           path: flashcard
       - name: Push Change
         run: |
-          git add flashcard
+          git add --all
           git commit -m "chore: update flashcard page"
           git push origin gh-pages
